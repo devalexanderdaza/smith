@@ -114,6 +114,10 @@ pnpm smith run -p /path/to/project -t tasks/custom-task.jsonc -v
 pnpm smith run -p /path/to/project --debug
 ```
 
+You can also set the `SMITH_TASK_PATH` environment variable to point to a custom
+task file. If defined, the orchestrator will use this path instead of the
+default `src/tasks/task-001.jsonc`.
+
 #### View Metrics
 
 ```bash
