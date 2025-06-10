@@ -1,22 +1,28 @@
 {
-  // Configuración global para el sistema de agentes IA
-  "defaultEngine": "chatgpt-3.5",
+  "defaultEngine": "openai",
   "defaultBranch": "main",
+  "providers": {
+    "openai": {
+      "apiKeyEnv": "OPENAI_API_KEY",
+      "model": "gpt-4o",
+      "endpoint": "https://api.openai.com/v1/chat/completions"
+    },
+    "gemini": {
+      "apiKeyEnv": "GEMINI_API_KEY",
+      "model": "gemini-1.5-pro",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta/models"
+    },
+    "jules": {
+      "apiKeyEnv": "JULES_API_KEY",
+      "model": "jules-xlarge",
+      "endpoint": "https://api.jules.ai/v1/inference"
+    }
+  },
   "agents": {
     "codeArchitect": {
       "enabled": true,
-      "promptFile": "agents/code-architect/prompt.md"
-    },
-    "scraperEngineer": {
-      "enabled": true,
-      "promptFile": "agents/scraper-engineer/prompt.md"
-    },
-    "autoUpdater": {
-      "enabled": true,
-      "promptFile": "agents/auto-updater/prompt.md"
+      "promptFile": "agents/code-architect/prompt.md",
+      "engine": "openai" // se puede sobreescribir aquí
     }
-  },
-  "taskInputPath": "tasks/",
-  "taskOutputPath": "outputs/",
-  "logPath": "logs/"
+  }
 }
