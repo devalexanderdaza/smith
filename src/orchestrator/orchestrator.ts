@@ -15,18 +15,6 @@ const CONFIG_PATH = 'src/config/agent.config.jsonc';
 const SCHEMA_PATH = 'src/schemas/task.schema.json';
 const TASK_PATH = 'src/tasks/task-001.jsonc';
 
-const args = process.argv.slice(2);
-const projectRootArg = args.find(arg => arg.startsWith('--project-root='));
-if (!projectRootArg) {
-	logger.error('Missing required argument: --project-root=<path>');
-	process.exit(1);
-}
-const projectRoot = projectRootArg.split('=')[1];
-
-if (!projectRoot || !fs.existsSync(projectRoot)) {
-	logger.error('Invalid project root path', { projectRoot });
-	process.exit(1);
-}
 
 function validateSchema(data: any, schemaPath: string): void {
 	try {
@@ -54,7 +42,7 @@ function validateSchema(data: any, schemaPath: string): void {
 	}
 }
 
-async function main() {
+async function main(projectRoot: string) {
 	try {
 		logger.info('🚀 Starting Smith orchestrator...');
 
@@ -166,12 +154,25 @@ ${sourceCode}
 // 	process.exit(1);
 // });
 async function Smith() {
-	try {
-		await main();
-	} catch (error) {
-		logger.error('Fatal error in orchestrator', {}, error as Error);
-		process.exit(1);
-	}
+        const args = process.argv.slice(2);
+        const projectRootArg = args.find(arg => arg.startsWith('--project-root='));
+        if (!projectRootArg) {
+                logger.error('Missing required argument: --project-root=<path>');
+                process.exit(1);
+        }
+        const projectRoot = projectRootArg.split('=')[1];
+
+        if (!projectRoot || !fs.existsSync(projectRoot)) {
+                logger.error('Invalid project root path', { projectRoot });
+                process.exit(1);
+        }
+
+        try {
+                await main(projectRoot);
+        } catch (error) {
+                logger.error('Fatal error in orchestrator', {}, error as Error);
+                process.exit(1);
+        }
 }
 
 export { Smith };
