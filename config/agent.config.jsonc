@@ -1,0 +1,22 @@
+{
+  // Configuración global para el sistema de agentes IA
+  "defaultEngine": "chatgpt-3.5",
+  "defaultBranch": "main",
+  "agents": {
+    "codeArchitect": {
+      "enabled": true,
+      "promptFile": "agents/code-architect/prompt.md"
+    },
+    "scraperEngineer": {
+      "enabled": true,
+      "promptFile": "agents/scraper-engineer/prompt.md"
+    },
+    "autoUpdater": {
+      "enabled": true,
+      "promptFile": "agents/auto-updater/prompt.md"
+    }
+  },
+  "taskInputPath": "tasks/",
+  "taskOutputPath": "outputs/",
+  "logPath": "logs/"
+}

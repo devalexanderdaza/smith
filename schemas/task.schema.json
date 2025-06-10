@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IA Task Schema",
+  "type": "object",
+  "required": ["agent", "objective", "sourceFile", "outputFile"],
+  "properties": {
+    "agent": {
+      "type": "string",
+      "enum": ["codeArchitect", "scraperEngineer", "autoUpdater"]
+    },
+    "objective": {
+      "type": "string",
+      "description": "Descripción clara del propósito de la tarea."
+    },
+    "sourceFile": {
+      "type": "string",
+      "description": "Ruta al archivo fuente que debe ser leído o modificado."
+    },
+    "outputFile": {
+      "type": "string",
+      "description": "Ruta del archivo que el agente debe generar."
+    },
+    "constraints": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Restricciones que el agente debe cumplir."
+    },
+    "context": {
+      "type": "string",
+      "description": "Contexto adicional que ayude a interpretar el objetivo."
+    }
+  },
+  "additionalProperties": false
+}
