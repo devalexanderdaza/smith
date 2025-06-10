@@ -28,7 +28,7 @@ Smith is a powerful TypeScript-based framework for building AI agents and orches
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/devalexanderdaza/smith.git
    cd smith
    ```
 
@@ -105,46 +105,46 @@ Smith is a powerful TypeScript-based framework for building AI agents and orches
 
 ```bash
 # Execute default task
-npm run smith run -p /path/to/project
+pnpm smith run -p /path/to/project
 
 # Execute specific task with verbose logging
-npm run smith run -p /path/to/project -t tasks/custom-task.jsonc -v
+pnpm smith run -p /path/to/project -t tasks/custom-task.jsonc -v
 
 # Debug mode
-npm run smith run -p /path/to/project --debug
+pnpm smith run -p /path/to/project --debug
 ```
 
 #### View Metrics
 
 ```bash
 # Quick metrics overview
-npm run smith metrics
+pnpm smith metrics
 
 # Detailed report
-npm run smith metrics --report
+pnpm smith metrics --report
 
 # Metrics for specific date
-npm run smith metrics --date 2025-06-10
+pnpm smith metrics --date 2025-06-10
 ```
 
 #### Validate Configuration
 
 ```bash
 # Validate default config
-npm run smith validate
+pnpm smith validate
 
 # Validate specific config file
-npm run smith validate -c config/custom-config.jsonc
+pnpm smith validate -c config/custom-config.jsonc
 ```
 
 #### Initialize New Project
 
 ```bash
 # Initialize in current directory
-npm run smith init
+pnpm smith init
 
 # Initialize in specific directory
-npm run smith init -d /path/to/new/project
+pnpm smith init -d /path/to/new/project
 ```
 
 ### Programmatic Usage
@@ -196,7 +196,7 @@ Smith includes comprehensive monitoring capabilities:
 
 ```bash
 # View system overview
-npm run smith metrics
+pnpm smith metrics
 
 # Example output:
 📊 Smith Framework Metrics:
@@ -310,16 +310,16 @@ smith/
 
 ```bash
 # Run linting
-npm run lint
+pnpm lint
 
 # Format code
-npm run format
+pnpm format
 
 # Validate configuration
-npm run smith validate
+pnpm smith validate
 
 # Test with sample task
-npm run smith run -p . -t src/tasks/task-example.jsonc --debug
+pnpm smith run -p . -t src/tasks/task-example.jsonc --debug
 ```
 
 ## 📈 Performance Optimization

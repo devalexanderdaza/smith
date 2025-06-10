@@ -21,7 +21,7 @@
   "agents": {
     "codeArchitect": {
       "enabled": true,
-      "promptFile": "agents/code-architect/prompt.md",
+      "promptFile": "src/agents/code-architect/prompt.md",
       "engine": "openai" // se puede sobreescribir aquí
     }
   }

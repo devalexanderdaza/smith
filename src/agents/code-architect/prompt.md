@@ -24,22 +24,22 @@ Recibirás un JSON con la siguiente estructura:
 
 ```json
 {
-	// Agente encargado de ejecutar la tarea
-	"agent": "codeArchitect",
-	// Descripción general de lo que debe lograrse
-	"objective": "Refactor the simit scraper to follow modular principles and use adapter + plugin pattern",
-	// Archivo que contiene el código fuente actual
-	"sourceFile": "src/main.ts",
-	// Archivo donde el agente debe escribir la mejora
-	"outputFile": "src/main.module.ts",
-	// Reglas que debe cumplir el resultado
-	"constraints": [
-		"Maintain functionality as-is",
-		"Use only TypeScript (strict mode)",
-		"Split logic by responsibility",
-		"Implement Adapter pattern for engine selection"
-	],
-	// Contexto adicional sobre el objetivo
-	"context": "The current scraper is tightly coupled to Playwright. We want to support other engines and improve maintainability."
+ // Agente encargado de ejecutar la tarea
+ "agent": "codeArchitect",
+ // Descripción general de lo que debe lograrse
+ "objective": "Refactor the simit scraper to follow modular principles and use adapter + plugin pattern",
+ // Archivo que contiene el código fuente actual
+ "sourceFile": "src/main.ts",
+ // Archivo donde el agente debe escribir la mejora
+ "outputFile": "src/main.module.ts",
+ // Reglas que debe cumplir el resultado
+ "constraints": [
+  "Maintain functionality as-is",
+  "Use only TypeScript (strict mode)",
+  "Split logic by responsibility",
+  "Implement Adapter pattern for engine selection"
+ ],
+ // Contexto adicional sobre el objetivo
+ "context": "The current scraper is tightly coupled to Playwright. We want to support other engines and improve maintainability."
 }
 ```

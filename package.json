@@ -8,6 +8,11 @@
 		"email": "dev.alexander.daza@gmail.com",
 		"url": "https://github.com/devalexanderdaza"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/devalexanderdaza/smith.git"
+	},
+	"license": "MIT",
 	"scripts": {
 		"start": "ts-node src/orchestrator/orchestrator.ts",
 		"dev": "nodemon --watch 'src/**/*.ts' -e ts,json --exec ts-node src/orchestrator/orchestrator.ts",
