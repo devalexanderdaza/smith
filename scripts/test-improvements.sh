@@ -9,7 +9,7 @@ echo "========================================"
 # Test 1: Validate TypeScript compilation
 echo ""
 echo "1️⃣  Testing TypeScript compilation..."
-npm run build
+pnpm run build
 if [ $? -eq 0 ]; then
     echo "✅ TypeScript compilation successful"
 else
@@ -20,7 +20,7 @@ fi
 # Test 2: Validate configuration
 echo ""
 echo "2️⃣  Testing configuration validation..."
-npm run smith validate
+pnpm run smith validate
 if [ $? -eq 0 ]; then
     echo "✅ Configuration validation successful"
 else
@@ -30,7 +30,7 @@ fi
 # Test 3: Test CLI functionality
 echo ""
 echo "3️⃣  Testing CLI functionality..."
-npm run smith --help >/dev/null 2>&1
+pnpm run smith --help >/dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo "✅ CLI functionality working"
 else
@@ -40,7 +40,7 @@ fi
 # Test 4: Test metrics system
 echo ""
 echo "4️⃣  Testing metrics system..."
-npm run smith metrics >/dev/null 2>&1
+pnpm run smith metrics >/dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo "✅ Metrics system working"
 else
@@ -114,4 +114,4 @@ echo "Next steps:"
 echo "1. Set up your environment variables (API keys)"
 echo "2. Create agent prompt files"
 echo "3. Define your first task"
-echo "4. Run: npm run smith run -p /path/to/your/project"
+echo "4. Run: pnpm smith run -p /path/to/your/project"

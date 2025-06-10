@@ -1,0 +1,20 @@
+{
+    // Agente especializado en scraping
+    "agent": "scraperEngineer",
+    // Objetivo específico para el scraper
+    "objective": "Refactor existing scraper to support multiple engines and improve reliability",
+    // Archivo con el scraper actual
+    "sourceFile": "src/scraper.ts",
+    // Archivo donde escribir la mejora
+    "outputFile": "src/enhanced-scraper.ts",
+    // Restricciones técnicas
+    "constraints": [
+        "Support Playwright and Puppeteer engines",
+        "Implement retry mechanisms with exponential backoff",
+        "Add comprehensive error handling and logging",
+        "Use TypeScript strict mode",
+        "Validate extracted data with schemas"
+    ],
+    // Contexto del problema
+    "context": "Current scraper is tightly coupled to one engine and fails frequently on dynamic content. Need a more robust, multi-engine solution that can handle modern SPAs and has better error recovery."
+}

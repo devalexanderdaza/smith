@@ -1,0 +1,20 @@
+{
+    // Agente especializado en actualizaciones
+    "agent": "autoUpdater",
+    // Objetivo de actualización
+    "objective": "Update project dependencies and handle breaking changes safely",
+    // Archivo de configuración de dependencias
+    "sourceFile": "package.json",
+    // Reporte de migración
+    "outputFile": "migration-report.md",
+    // Restricciones de compatibilidad
+    "constraints": [
+        "Maintain Node.js 20+ compatibility",
+        "Keep TypeScript strict mode enabled",
+        "Update only to stable releases",
+        "Preserve existing API contracts",
+        "Run full test suite after updates"
+    ],
+    // Contexto del proyecto
+    "context": "Project dependencies are outdated with security vulnerabilities. Need to update safely while maintaining functionality and ensuring all tests pass."
+}

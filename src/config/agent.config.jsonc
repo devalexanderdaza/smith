@@ -22,7 +22,20 @@
     "codeArchitect": {
       "enabled": true,
       "promptFile": "src/agents/code-architect/prompt.md",
-      "engine": "openai" // se puede sobreescribir aquí
+      "engine": "openai",
+      "description": "Refactors code following best practices and design patterns"
+    },
+    "scraperEngineer": {
+      "enabled": true,
+      "promptFile": "src/agents/scraper-engineer/prompt.md",
+      "engine": "openai",
+      "description": "Builds robust web scraping solutions with multi-engine support"
+    },
+    "autoUpdater": {
+      "enabled": true,
+      "promptFile": "src/agents/auto-updater/prompt.md",
+      "engine": "openai",
+      "description": "Automates dependency updates and code migrations"
     }
   }
 }

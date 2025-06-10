@@ -1,0 +1,21 @@
+{
+    // Agente arquitecto de código
+    "agent": "codeArchitect",
+    // Objetivo de refactorización avanzada
+    "objective": "Implement hexagonal architecture with dependency injection and CQRS pattern",
+    // Archivo con código legacy
+    "sourceFile": "src/legacy-service.ts",
+    // Archivo con nueva arquitectura
+    "outputFile": "src/domain-service.ts",
+    // Restricciones arquitectónicas
+    "constraints": [
+        "Implement hexagonal architecture pattern",
+        "Use dependency injection container",
+        "Separate commands and queries (CQRS)",
+        "Add comprehensive unit tests",
+        "Follow SOLID principles strictly",
+        "Use TypeScript decorators for metadata"
+    ],
+    // Contexto arquitectónico
+    "context": "Current service layer is tightly coupled with infrastructure concerns. Need to implement clean architecture with proper domain isolation, testability, and separation of concerns."
+}
