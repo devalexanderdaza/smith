@@ -1,7 +1,12 @@
-# Node.js
+# Dependencias de Node
 node_modules/
+# Build output
 dist/
+# Archivos de entorno
 .env
+.env.local
+# Archivos de sistema
 .DS_Store
-logs/
+# Salidas y logs
 outputs/
+logs/
