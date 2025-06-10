@@ -10,9 +10,14 @@
     "skipLibCheck": true
   },
   "include": [
-    "orchestrator/**/*",
-    "agents/**/*",
-    "tasks/**/*",
-    "schemas/**/*"
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    "logs",
+    "node_modules",
+    "outputs",
+    "scripts",
+    "dist"
   ]
 }

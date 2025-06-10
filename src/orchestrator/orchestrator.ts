@@ -3,17 +3,17 @@ import addFormats from 'ajv-formats';
 import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
-import { getLLMProvider } from '../src/providers/llm-dispatcher';
-import { validateSetup } from '../src/utils/config-validator';
-import { readJSONC } from '../src/utils/files';
-import { logger } from '../src/utils/logger';
-import { metricsCollector } from '../src/utils/metrics';
+import { getLLMProvider } from '../providers/llm-dispatcher';
+import { validateSetup } from '../utils/config-validator';
+import { readJSONC } from '../utils/files';
+import { logger } from '../utils/logger';
+import { metricsCollector } from '../utils/metrics';
 
 dotenv.config();
 
-const CONFIG_PATH = 'config/agent.config.jsonc';
-const SCHEMA_PATH = 'schemas/task.schema.json';
-const TASK_PATH = 'tasks/task-001.jsonc';
+const CONFIG_PATH = 'src/config/agent.config.jsonc';
+const SCHEMA_PATH = 'src/schemas/task.schema.json';
+const TASK_PATH = 'src/tasks/task-001.jsonc';
 
 const args = process.argv.slice(2);
 const projectRootArg = args.find(arg => arg.startsWith('--project-root='));

@@ -50,7 +50,7 @@ fi
 # Test 5: Validate project structure
 echo ""
 echo "5️⃣  Validating project structure..."
-required_dirs=("agents" "config" "schemas" "tasks" "logs" "src/providers" "src/utils" "src/cli")
+required_dirs=("src/agents" "src/config" "src/schemas" "src/tasks" "logs" "src/providers" "src/utils" "src/cli" "src/orchestrator")
 all_dirs_exist=true
 
 for dir in "${required_dirs[@]}"; do
@@ -74,7 +74,9 @@ required_files=(
     "src/utils/logger.ts"
     "src/utils/config-validator.ts"
     "src/utils/metrics.ts"
+    "src/utils/files.ts"
     "src/cli/smith.ts"
+    "src/orchestrator/orchestrator.ts"
     "README.md"
 )
 

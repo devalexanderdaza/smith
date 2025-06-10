@@ -149,7 +149,7 @@ export class ConfigValidator {
 		}
 
 		// Check required directories
-		const requiredDirs = ['config', 'agents', 'tasks', 'schemas'];
+		const requiredDirs = ['src/config', 'src/agents', 'src/tasks', 'src/schemas'];
 		for (const dir of requiredDirs) {
 			if (!fs.existsSync(dir)) {
 				result.errors.push(`Required directory not found: ${dir}`);

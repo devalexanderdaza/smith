@@ -39,7 +39,7 @@ program
 
 		// Import and run orchestrator
 		try {
-			const { Smith } = await import('../../orchestrator/orchestrator');
+			const { Smith } = await import('../orchestrator/orchestrator');
 			process.argv = ['node', 'orchestrator', `--project-root=${options.projectRoot}`];
 			await Smith();
 		} catch (error) {
@@ -89,7 +89,7 @@ program
 program
 	.command('validate')
 	.description('Validate configuration and environment')
-	.option('-c, --config <file>', 'Configuration file to validate', 'config/agent.config.jsonc')
+	.option('-c, --config <file>', 'Configuration file to validate', 'src/config/agent.config.jsonc')
 	.action(async options => {
 		try {
 			const config = readJSONC(options.config);
@@ -113,12 +113,12 @@ program
 
 		// Create directory structure
 		const dirs = [
-			'agents/code-architect',
-			'agents/scraper-engineer',
-			'agents/auto-updater',
-			'config',
-			'tasks',
-			'schemas',
+			'src/agents/code-architect',
+			'src/agents/scraper-engineer',
+			'src/agents/auto-updater',
+			'src/config',
+			'src/tasks',
+			'src/schemas',
 			'logs',
 			'outputs',
 		];
@@ -133,9 +133,9 @@ program
 
 		// Copy template files if they don't exist
 		const templates = [
-			{ src: 'config/agent.config.jsonc', desc: 'Agent configuration' },
-			{ src: 'schemas/task.schema.json', desc: 'Task schema' },
-			{ src: 'tasks/task-example.jsonc', desc: 'Example task' },
+			{ src: 'src/config/agent.config.jsonc', desc: 'Agent configuration' },
+			{ src: 'src/schemas/task.schema.json', desc: 'Task schema' },
+			{ src: 'src/tasks/task-example.jsonc', desc: 'Example task' },
 		];
 
 		for (const template of templates) {
@@ -144,7 +144,7 @@ program
 				// Create basic template content
 				let content = '';
 				switch (template.src) {
-					case 'config/agent.config.jsonc':
+					case 'src/config/agent.config.jsonc':
 						content = JSON.stringify(
 							{
 								defaultEngine: 'openai',
@@ -158,7 +158,7 @@ program
 								agents: {
 									codeArchitect: {
 										enabled: true,
-										promptFile: 'agents/code-architect/prompt.md',
+										promptFile: 'src/agents/code-architect/prompt.md',
 									},
 								},
 							},
@@ -166,7 +166,7 @@ program
 							2,
 						);
 						break;
-					case 'tasks/task-example.jsonc':
+					case 'src/tasks/task-example.jsonc':
 						content = JSON.stringify(
 							{
 								agent: 'codeArchitect',

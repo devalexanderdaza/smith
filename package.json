@@ -9,8 +9,8 @@
 		"url": "https://github.com/devalexanderdaza"
 	},
 	"scripts": {
-		"start": "ts-node orchestrator/orchestrator.ts",
-		"dev": "nodemon --watch 'agents/**/*.ts' --watch 'orchestrator/**/*.ts' --watch 'tasks/**/*.ts' -e ts,json --exec ts-node orchestrator/orchestrator.ts",
+		"start": "ts-node src/orchestrator/orchestrator.ts",
+		"dev": "nodemon --watch 'src/**/*.ts' -e ts,json --exec ts-node src/orchestrator/orchestrator.ts",
 		"build": "tsc",
 		"lint": "eslint . --ext .ts",
 		"format": "prettier --write .",
