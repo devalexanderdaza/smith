@@ -13,7 +13,8 @@ dotenv.config();
 
 const CONFIG_PATH = 'src/config/agent.config.jsonc';
 const SCHEMA_PATH = 'src/schemas/task.schema.json';
-const TASK_PATH = 'src/tasks/task-001.jsonc';
+const DEFAULT_TASK_PATH = 'src/tasks/task-001.jsonc';
+const TASK_PATH = process.env.SMITH_TASK_PATH || DEFAULT_TASK_PATH;
 
 
 function validateSchema(data: any, schemaPath: string): void {
