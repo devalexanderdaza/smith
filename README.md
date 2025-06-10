@@ -57,26 +57,26 @@ Smith is a powerful TypeScript-based framework for building AI agents and orches
 
 ```jsonc
 {
-	"defaultEngine": "openai",
-	"providers": {
-		"openai": {
-			"apiKeyEnv": "OPENAI_API_KEY",
-			"model": "gpt-4o",
-			"endpoint": "https://api.openai.com/v1/chat/completions",
-		},
-		"gemini": {
-			"apiKeyEnv": "GEMINI_API_KEY",
-			"model": "gemini-1.5-pro",
-			"endpoint": "https://generativelanguage.googleapis.com/v1beta/models",
-		},
-	},
-	"agents": {
-		"codeArchitect": {
-			"enabled": true,
-			"promptFile": "agents/code-architect/prompt.md",
-			"engine": "openai",
-		},
-	},
+ "defaultEngine": "openai",
+ "providers": {
+  "openai": {
+   "apiKeyEnv": "OPENAI_API_KEY",
+   "model": "gpt-4o",
+   "endpoint": "https://api.openai.com/v1/chat/completions",
+  },
+  "gemini": {
+   "apiKeyEnv": "GEMINI_API_KEY",
+   "model": "gemini-1.5-pro",
+   "endpoint": "https://generativelanguage.googleapis.com/v1beta/models",
+  },
+ },
+ "agents": {
+  "codeArchitect": {
+   "enabled": true,
+   "promptFile": "agents/code-architect/prompt.md",
+   "engine": "openai",
+  },
+ },
 }
 ```
 
@@ -84,16 +84,16 @@ Smith is a powerful TypeScript-based framework for building AI agents and orches
 
 ```jsonc
 {
-	"agent": "codeArchitect",
-	"objective": "Refactor code to follow SOLID principles",
-	"sourceFile": "src/legacy-code.ts",
-	"outputFile": "src/refactored-code.ts",
-	"constraints": [
-		"Maintain existing functionality",
-		"Use TypeScript strict mode",
-		"Add comprehensive JSDoc comments",
-	],
-	"context": "Legacy codebase needs modernization",
+ "agent": "codeArchitect",
+ "objective": "Refactor code to follow SOLID principles",
+ "sourceFile": "src/legacy-code.ts",
+ "outputFile": "src/refactored-code.ts",
+ "constraints": [
+  "Maintain existing functionality",
+  "Use TypeScript strict mode",
+  "Add comprehensive JSDoc comments",
+ ],
+ "context": "Legacy codebase needs modernization",
 }
 ```
 
@@ -155,9 +155,9 @@ import { logger } from './src/utils/logger';
 
 // Initialize provider
 const provider = getLLMProvider('openai', {
-	apiKeyEnv: 'OPENAI_API_KEY',
-	model: 'gpt-4o',
-	endpoint: 'https://api.openai.com/v1/chat/completions',
+ apiKeyEnv: 'OPENAI_API_KEY',
+ model: 'gpt-4o',
+ endpoint: 'https://api.openai.com/v1/chat/completions',
 });
 
 // Generate response
@@ -210,7 +210,7 @@ Total Tokens: 1,234,567
 
 ### Project Structure
 
-```
+```plaintext
 smith/
 ├── agents/                 # AI agent definitions
 │   ├── code-architect/    # Code architecture agent
@@ -234,13 +234,13 @@ smith/
    ```typescript
    // src/providers/my-provider.ts
    export class MyProvider implements LLMProvider {
-   	constructor(config: ProviderConfig) {
-   		// Initialize provider
-   	}
+    constructor(config: ProviderConfig) {
+     // Initialize provider
+    }
 
-   	async generateResponse(prompt: string): Promise<string> {
-   		// Implementation
-   	}
+    async generateResponse(prompt: string): Promise<string> {
+     // Implementation
+    }
    }
    ```
 
@@ -249,8 +249,8 @@ smith/
    ```typescript
    // src/providers/llm-dispatcher.ts
    const providersMap = {
-   	// ...existing providers
-   	myprovider: (config: ProviderConfig) => new MyProvider(config),
+    // ...existing providers
+    myprovider: (config: ProviderConfig) => new MyProvider(config),
    };
    ```
 
@@ -259,13 +259,13 @@ smith/
    ```jsonc
    // config/agent.config.jsonc
    {
-   	"providers": {
-   		"myprovider": {
-   			"apiKeyEnv": "MY_PROVIDER_API_KEY",
-   			"model": "my-model-name",
-   			"endpoint": "https://api.myprovider.com/v1/generate",
-   		},
-   	},
+    "providers": {
+     "myprovider": {
+      "apiKeyEnv": "MY_PROVIDER_API_KEY",
+      "model": "my-model-name",
+      "endpoint": "https://api.myprovider.com/v1/generate",
+     },
+    },
    }
    ```
 
@@ -283,26 +283,26 @@ smith/
    ```jsonc
    // config/agent.config.jsonc
    {
-   	"agents": {
-   		"myAgent": {
-   			"enabled": true,
-   			"promptFile": "agents/my-agent/prompt.md",
-   			"engine": "openai",
-   		},
-   	},
+    "agents": {
+     "myAgent": {
+      "enabled": true,
+      "promptFile": "agents/my-agent/prompt.md",
+      "engine": "openai",
+     },
+    },
    }
    ```
 
 3. **Update task schema:**
 
    ```json
-   // schemas/task.schema.json
+   // src/schemas/task.schema.json
    {
-   	"properties": {
-   		"agent": {
-   			"enum": ["codeArchitect", "scraperEngineer", "autoUpdater", "myAgent"]
-   		}
-   	}
+    "properties": {
+     "agent": {
+      "enum": ["codeArchitect", "scraperEngineer", "autoUpdater", "myAgent"]
+     }
+    }
    }
    ```
 
@@ -319,7 +319,7 @@ npm run format
 npm run smith validate
 
 # Test with sample task
-npm run smith run -p . -t tasks/task-example.jsonc --debug
+npm run smith run -p . -t src/tasks/task-example.jsonc --debug
 ```
 
 ## 📈 Performance Optimization
